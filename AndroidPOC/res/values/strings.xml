@@ -1,0 +1,9 @@
+<resources>
+
+    <string name="app_name">AndroidPOC</string>
+    <string name="l_signin">Sign In</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_username">User Name</string>
+    <string name="s_signup_mes">If you are not a member yet?</string>
+
+</resources>
