@@ -55,10 +55,7 @@ public class WeatherInfo extends AsyncTask <String, Void, JSONObject>{
 	           }
 	
 	           HttpEntity getResponseEntity = getResponse.getEntity();
-	
-	        //HttpResponse httpResponse = httpClient.execute(httpPost);
-	        //HttpEntity httpEntity = httpResponse.getEntity();
-	        is = getResponseEntity.getContent();            
+	           is = getResponseEntity.getContent();            
 	
 	    } catch (UnsupportedEncodingException e) {
 	        e.printStackTrace();
