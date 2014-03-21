@@ -1,9 +1,8 @@
 <resources>
 
     <string name="app_name">AndroidPOC</string>
-    <string name="l_signin">Sign In</string>
-    <string name="hint_password">Password</string>
-    <string name="hint_username">User Name</string>
-    <string name="s_signup_mes">If you are not a member yet?</string>
+    <string name="h_search_city">Search City Here</string>
+    <string name="search_box_img">Search Box Image</string>
+    <string name="temp_weather">%s \u2109</string>
 
 </resources>

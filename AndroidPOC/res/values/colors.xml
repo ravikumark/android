@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  	<drawable name="background_white">#FFFFFF</drawable>
+    <color name="orange_color">#ff9900</color>
+    <color name="dark_gray_color">#7E7E7E</color>
+    <color name="blue_color">#A9EEFF</color>
+</resources>

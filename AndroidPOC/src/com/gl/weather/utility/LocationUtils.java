@@ -1,7 +1,6 @@
 package com.gl.weather.utility;
 
 import android.app.Service;
-import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
 import android.location.LocationListener;
@@ -13,12 +12,7 @@ import android.widget.Toast;
 public class LocationUtils extends Service implements LocationListener {
 	
 	protected LocationManager locationManager;
-	protected LocationListener locationListener;
-	protected Context context;
-	String lat;
-	String provider;
 	protected double latitude, longitude; 
-	protected boolean gps_enabled, network_enabled;
 	
 	@Override
 	public void onLocationChanged(Location location) {
@@ -50,7 +44,6 @@ public class LocationUtils extends Service implements LocationListener {
 
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
-		// TODO Auto-generated method stub
 		
 		locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
 		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);

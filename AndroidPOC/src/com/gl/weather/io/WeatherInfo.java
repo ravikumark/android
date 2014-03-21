@@ -12,6 +12,7 @@ import org.apache.http.HttpStatus;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -39,6 +40,7 @@ public class WeatherInfo extends AsyncTask <String, Void, JSONObject>{
 	protected JSONObject doInBackground(String... params) {
 	
 		String url= params[0];
+		System.out.println(url);
 	    // Making HTTP request
 	    try {
 	        // defaultHttpClient
@@ -93,12 +95,31 @@ public class WeatherInfo extends AsyncTask <String, Void, JSONObject>{
 	
 
 	}
-	protected void onPostExecute(JSONObject page)
+	protected void onPostExecute(JSONObject data)
 	{   
-	    //onPostExecute
-		TextView  weatherView = (TextView) view.findViewById(R.id.weatherinfo);
+		TextView  cityNameView = (TextView) view.findViewById(R.id.city_name_textview);
+		TextView  temparatureView = (TextView) view.findViewById(R.id.temp_weather_imgview);
 		
-		weatherView.setText(page.toString());
+		JSONArray list = null;
+		try {
+			list = data.getJSONArray("list");
+			
+			int length = list.length();
+			
+			for(int i = 0; i< length; i++){
+				if(i == 0){
+					JSONObject place = list.getJSONObject(i);
+					cityNameView.setText(place.getString("name"));
+					temparatureView.setText(place.getJSONObject("main").getString("temp")+ "\u2103");
+				}
+			}
+			
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+
 		
 	}   
 }
