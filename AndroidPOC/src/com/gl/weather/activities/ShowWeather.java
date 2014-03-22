@@ -19,7 +19,7 @@ public class ShowWeather extends Activity {
 		setContentView(R.layout.activity_show_weather);
 		
 		view = findViewById(android.R.id.content).getRootView();
-		new WeatherInfo(view).execute(WeatherAPI.BASE_URI+WeatherAPI.CITY+"?lat=21.145800400000000000&lon=79.088154600000050000&units=metric");
+		new WeatherInfo(view).execute(WeatherAPI.BASE_URI+WeatherAPI.CITY+"?lat=21.145800400000000000&lon=79.088154600000050000");
 		Intent i = new Intent(ShowWeather.this, LocationUtils.class);
 		startService(i);
 		
